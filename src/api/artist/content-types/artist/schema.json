@@ -17,6 +17,9 @@
     "last_name": {
       "type": "string"
     },
+    "psudonym": {
+      "type": "string"
+    },
     "bionote": {
       "type": "blocks"
     },
@@ -31,6 +34,16 @@
     },
     "notes": {
       "type": "blocks"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

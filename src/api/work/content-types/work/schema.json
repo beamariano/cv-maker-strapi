@@ -153,6 +153,19 @@
     },
     "notes": {
       "type": "blocks"
+    },
+    "isNewMedia": {
+      "type": "boolean"
+    },
+    "photos": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

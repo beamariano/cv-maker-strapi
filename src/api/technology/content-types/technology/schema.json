@@ -22,6 +22,9 @@
     },
     "proficiency_level": {
       "type": "string"
+    },
+    "isLanguage": {
+      "type": "boolean"
     }
   }
 }

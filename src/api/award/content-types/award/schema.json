@@ -14,6 +14,9 @@
     "name": {
       "type": "string"
     },
+    "award_details": {
+      "type": "text"
+    },
     "organizer": {
       "type": "string"
     },

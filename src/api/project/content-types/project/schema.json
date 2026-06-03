@@ -4,13 +4,16 @@
   "info": {
     "singularName": "project",
     "pluralName": "projects",
-    "displayName": "Art & Culture Projects"
+    "displayName": "Arts & Culture Projects"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
+    "project_name": {
+      "type": "string"
+    },
     "programs": {
       "type": "relation",
       "relation": "manyToMany",

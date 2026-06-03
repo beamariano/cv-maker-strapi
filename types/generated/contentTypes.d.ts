@@ -484,6 +484,8 @@ export interface ApiArtistArtist extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     notes: Schema.Attribute.Blocks;
+    photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    psudonym: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -503,6 +505,7 @@ export interface ApiAwardAward extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    award_details: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -633,11 +636,16 @@ export interface ApiFeatureFeature extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     notes: Schema.Attribute.Blocks;
+    photo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     publication_name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    website_link: Schema.Attribute.String;
     works: Schema.Attribute.Relation<'manyToMany', 'api::work.work'>;
   };
 }
@@ -780,7 +788,7 @@ export interface ApiProgramProgram extends Struct.CollectionTypeSchema {
 export interface ApiProjectProject extends Struct.CollectionTypeSchema {
   collectionName: 'projects';
   info: {
-    displayName: 'Art & Culture Projects';
+    displayName: 'Arts & Culture Projects';
     pluralName: 'projects';
     singularName: 'project';
   };
@@ -798,6 +806,7 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     programs: Schema.Attribute.Relation<'manyToMany', 'api::program.program'>;
+    project_name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -851,6 +860,7 @@ export interface ApiTechnologyTechnology extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    isLanguage: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -948,6 +958,7 @@ export interface ApiWorkWork extends Struct.CollectionTypeSchema {
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
+    isNewMedia: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::work.work'> &
       Schema.Attribute.Private;
@@ -958,6 +969,10 @@ export interface ApiWorkWork extends Struct.CollectionTypeSchema {
     >;
     medium: Schema.Attribute.String;
     notes: Schema.Attribute.Blocks;
+    photos: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     provenance: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
     series: Schema.Attribute.String;
