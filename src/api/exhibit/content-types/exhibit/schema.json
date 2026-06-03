@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "exhibits",
+  "info": {
+    "singularName": "exhibit",
+    "pluralName": "exhibits",
+    "displayName": "Exhibits"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "event_details": {
+      "type": "component",
+      "component": "shared.event-details",
+      "repeatable": false
+    },
+    "references": {
+      "type": "blocks"
+    },
+    "programs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::program.program",
+      "mappedBy": "part_of_exhibit"
+    },
+    "notes": {
+      "type": "text"
+    }
+  }
+}

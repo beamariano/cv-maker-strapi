@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tech_projects",
+  "info": {
+    "singularName": "tech-project",
+    "pluralName": "tech-projects",
+    "displayName": "Tech Projects"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "repository_link": {
+      "type": "string"
+    },
+    "tech": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::technology.technology",
+      "mappedBy": "tech_project"
+    },
+    "notes": {
+      "type": "blocks"
+    }
+  }
+}

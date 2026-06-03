@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_shared_event_details",
+  "info": {
+    "displayName": "Event Details",
+    "icon": "calendar"
+  },
+  "options": {},
+  "attributes": {
+    "event_name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "date_start": {
+      "type": "date"
+    },
+    "date_end": {
+      "type": "date"
+    },
+    "venue_name": {
+      "type": "string"
+    },
+    "venue_city": {
+      "type": "string"
+    },
+    "venue_country": {
+      "type": "string",
+      "default": "PH"
+    },
+    "event_documentation": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "organizer": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

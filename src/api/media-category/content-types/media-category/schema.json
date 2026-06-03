@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "media_categories",
+  "info": {
+    "singularName": "media-category",
+    "pluralName": "media-categories",
+    "displayName": "Art Medium"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "works": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::work.work",
+      "inversedBy": "media_categories"
+    }
+  }
+}

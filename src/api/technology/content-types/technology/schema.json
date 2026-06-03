@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "technologies",
+  "info": {
+    "singularName": "technology",
+    "pluralName": "technologies",
+    "displayName": "Technologies - Languages, Frameworks & Libraries"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tech_project": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tech-project.tech-project",
+      "inversedBy": "tech"
+    },
+    "proficiency_level": {
+      "type": "string"
+    }
+  }
+}

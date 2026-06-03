@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "workshops_fellowships",
+  "info": {
+    "singularName": "workshop-fellowship",
+    "pluralName": "workshops-fellowships",
+    "displayName": "Workshops & Fellowships"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "event_details": {
+      "type": "component",
+      "component": "shared.event-details",
+      "repeatable": true
+    }
+  }
+}

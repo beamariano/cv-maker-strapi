@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "work_experiences",
+  "info": {
+    "singularName": "work-experience",
+    "pluralName": "work-experiences",
+    "displayName": "Work Experience"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titles_positions_or_roles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::position.position",
+      "mappedBy": "work_experiences"
+    },
+    "company_name": {
+      "type": "string"
+    },
+    "date_start": {
+      "type": "date"
+    },
+    "date_end": {
+      "type": "date"
+    },
+    "ongoing": {
+      "type": "boolean"
+    },
+    "reponsibilities": {
+      "type": "blocks"
+    },
+    "engagement": {
+      "type": "enumeration",
+      "enum": [
+        "Full-time",
+        "Part-time",
+        "Project-Based",
+        "Volunteer"
+      ]
+    },
+    "Notes": {
+      "type": "blocks"
+    }
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "kind": "collectionType",
+  "collectionName": "works",
+  "info": {
+    "singularName": "work",
+    "pluralName": "works",
+    "displayName": "Works"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "uid"
+    },
+    "title": {
+      "type": "string"
+    },
+    "series": {
+      "type": "string"
+    },
+    "edition": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "medium": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "height_cm": {
+      "type": "decimal"
+    },
+    "width_cm": {
+      "type": "decimal"
+    },
+    "depth_cm": {
+      "type": "decimal"
+    },
+    "framed": {
+      "type": "boolean"
+    },
+    "frame_width_cm": {
+      "type": "decimal",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "framed"
+            },
+            true
+          ]
+        }
+      }
+    },
+    "frame_depth_cm": {
+      "type": "decimal",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "framed"
+            },
+            true
+          ]
+        }
+      }
+    },
+    "frame_height_cm": {
+      "type": "decimal",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "framed"
+            },
+            true
+          ]
+        }
+      }
+    },
+    "provenance": {
+      "type": "text"
+    },
+    "control_no": {
+      "type": "uid"
+    },
+    "signed": {
+      "type": "boolean"
+    },
+    "signature_location": {
+      "type": "enumeration",
+      "enum": [
+        "top left",
+        "top center",
+        "top right",
+        "center left",
+        "center",
+        "center right",
+        "bottom left",
+        "bottom center",
+        "bottom right"
+      ]
+    },
+    "markings": {
+      "type": "blocks"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "form": {
+      "type": "enumeration",
+      "enum": [
+        "painting",
+        "drawing",
+        "print",
+        "sculpture",
+        "film / video",
+        "new media"
+      ]
+    },
+    "durational": {
+      "type": "boolean"
+    },
+    "media_categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::media-category.media-category",
+      "mappedBy": "works"
+    },
+    "features_and_reviews": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::feature.feature",
+      "mappedBy": "works"
+    },
+    "artists": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::artist.artist",
+      "mappedBy": "works"
+    },
+    "notes": {
+      "type": "blocks"
+    }
+  }
+}
